@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--SA：I, Erin Ng, 400360728 certify that this material is my original work.
+ No other person's work has been used without due acknowledgement.
+ I have also not made my work available to anyone else.-->
+<head>
+    <meta charset="UTF-8">
+    <title>4IT3 assignment 1</title>
+    <style>
+        h1{
+            font-weight: bold;
+            font-family: "Times New Roman",sans-serif;
+            font-size:75px;
+            color:white;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8); /* Creates black reflection */
+
+        }
+        .section {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Adjust height as needed */
+            width: 100%;
+
+        }
+        .image-container {
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Centers the image horizontally */
+            align-items: center; /* Centers the image vertically (if height is set) */
+            text-align: center; /* Ensures alignment */
+        }
+
+        .image-container img {
+            width: auto; /* Adjust as needed */
+            height: 55vh; /* Keeps aspect ratio */
+            border: 5px solid white; /* White outline */
+            border-radius: 10px; /* Optional: adds rounded corners */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: white glow effect */
+        }
+        /* Sidebar (1/3 Width) */
+        .sidebar{
+            width: 30%;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: black;
+            padding: 20px;
+            box-sizing:border-box;
+            margin: 10px;
+            background-image: linear-gradient(to bottom right,white,lightgray);
+
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 45px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .sidebar ul li:hover {
+            text-decoration: underline;
+        }
+        /* Content Area (2/3 Width) */
+        .content {
+            width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 5px solid black;
+            background-image: linear-gradient(to bottom right,white,lightgray);
+            height: auto; /* Make content full-height */
+            overflow-y: auto; /* In case the content is too long */
+            border-spacing: 10px;
+            margin:10px;
+
+
+        }
+        .detailed_content{
+            width:26%;
+            height:auto;
+            padding:20px;
+            border-radius:10px;
+            background-image: linear-gradient(to bottom right,burlywood,lightgoldenrodyellow);
+            color:black;
+            margin:10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            display:inline-block;
+            vertical-align: top;
+
+
+
+
+        }
+        .content h2 {
+            margin-top: 0;
+            font-size: 45px;
+
+        }
+
+        /* Container to hold sidebar and content */
+        .container {
+            display: flex;
+
+
+
+
+        }
+
+        body {
+            margin: 10px;
+            padding: 0;
+            height: 100vh;
+            background-image: linear-gradient(to bottom right,darkblue,blueviolet);  /* Replace with your image URL */
+            background-size: cover;  /* Make the image cover the entire page */
+            background-position: center;  /* Center the background image */
+            background-attachment: fixed;  /* Keep the image fixed while scrolling */
+        }
+
+    </style>
+</head>
+<body>
+    <table class="section" >
+        <tr>
+            <td class="image-container">
+                <img src="ErinNg.jpg" alt="Erin Ng" >
+            </td>
+            <td>
+                <h1 style="text-align: Center">Get to know Who is ERIN!</h1>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div class="container">
+        <!-- Sidebar (1/3) -->
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li onclick="showContent('education')">Education</li>
+                <li onclick="showContent('work')">Work Experiences</li>
+                <li onclick="showContent('projects')">Projects</li>
+                <li onclick="showContent('cert')">Certifications</li>
+                <li onclick="showContent('eca')">Extra Curricular Activities</li>
+            </ul>
+        </div>
+        <!-- Content Area (2/3) -->
+        <div class="content" id="content">
+            <h2>Professional Summary</h2>
+            <p>Currently pursuing a Bachelor of Technology in Automation Engineering at McMaster University, Erin is set to graduate in December 2025. Gained hands-on experience as a Manufacturing Research Assistant at McMaster Manufacturing Research Institute (MMRI) conducting research and analysis, streamlining processes, and implementing manufacturing strategies. Possess strong skills in project management, problem-solving, and team collaboration. Contributed significantly to productivity improvements and cost reductions in previous roles by leveraging knowledge of manufacturing systems, operations, and lean principles. </p>
+        </div>
+    </div>
+    <script>
+        function showContent(section) {
+            let content = {
+                "education": "<h2>My Education</h2><p><i><b>Bachelor of Technology - Automation Engineering</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expected Completion December 2025</i><ul>" +
+                    "<li>Currently in level four of an integrated four-year joint program with McMaster University and Mohawk College\n</li>" +
+                    "<li>Will be awarded Bachelor of Technology Degree, Advanced Diploma in Chemical Engineering Technology – Process Automation and Business Management Certificate</li>" +
+                    "</ul>" +
+                    "<u>Relevant :</u><ul>" +
+                    "<li>WHMIS safety training</li>" +
+                    "<li>CAD, Chemical Engineering, Electricity and Electronics, Instrumentation, PLC, Control Theory and a variety of management and financial courses</li>" +
+                    "<li>Work with complex AC and DC circuits in Electricity and Electronics I and II, measuring voltages, currents and circuit analysis using oscilloscopes such as Analog Discovery 2</li>" +
+                    "<li>Learned design software such as AutoCAD 2D, 3D drawings and modeling with Solidworks, and chemical process designs with UniSim</li>" +
+                    "<li>Programming languages such as C++ Programming, Object-Oriented Programming and MATLAB/Simulink</li></ul>" +
+                    "<u>Laboratory Experience:</u>" +
+                    "<br>From Electricity, Instrumentation, PLC and Chemistry" +
+                    "<ul><li>Completed over 12 group experiments throughout the semester in each course</li>" +
+                    "<li>Obtained hands-on skills with PLC-5, develop and implement ladder logic and controls</li>" +
+                    "<li>Earned practical lab experience working with precise measurements in Industrial Organic Chemistry, Chemical Engineering and Analytical Chemistry labs</li>" +
+                    "<li>Calibrated and worked with level, temperature and pressure measuring instruments</li>" +
+                    "<li>Gained specialized knowledge in sensors, instruments, actuators, industrial networks, process control automation</li>" +
+                    "</ul></p>",
+                "work": "<h2>Work Experiences</h2><p><i><b>Manufacturing Research Assistant III Co-op</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jan 2024 - Aug 2024</i>" +
+                    "<br>McMaster Manufacturing Research Institute - Hamilton, Ontario" +
+                    "<ul><li>Partnered with McMaster Manufacturing Research Institute's engineers to design and enhance manufacturability of Guided Hands TM products using SolidWorks.</li>" +
+                    "<li>Assembled over 300 Guided Hands TM units with the use of 3D printers</li>" +
+                    "<li>Provided feedback on existing processes and suggested improvements when necessary</li>" +
+                    "<li>Investigated root causes of defects found during quality assurance inspections</li>" +
+                    "</ul></p>" +
+                    "<p><b><i>Machine Operator - </b>Flat Stack Team Assembler&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2023 - Dec 2023</i>" +
+                    "<br>JFE Shoji Power Canada Inc. - Burlington, Ontario" +
+                    "<ul><li>Demonstrated understanding of health and safety protocols in an industrial setting</li>" +
+                    "<li>Set up and operated production machinery in accordance with prescribed procedures and guidelines</li>" +
+                    "<li>Used effective communication, critical thinking, and initiative to contribute to the success of the team</li>" +
+                    "<li>Utilized intuitive thinking to successfully oversee various situations.</li></ul></p>",
+                "projects": "<h2>Projects</h2>" +
+                    "<div class='detailed_content'>" +
+                    "<img src=\"ccproject.jpeg\" alt=\"ccproject\" width='250px' >" +
+                    "<br><h3 style='text-align: center'><a href=\"https://docs.google.com/document/d/19ItSoGGEAFifC6ZiEcB1sAyb4ZycAO8KpcF88VWnzW0/edit?usp=sharing\" target='_blank' style='color:black'>Color Sorting Conveyer Belt</h3></a>" +
+                    "<p style='text-align: center'>This is a conveyor belt that sort three different color with the help of a color sensor and multiple position sensors</p>" +
+                    "</div>",
+                "cert": "<h2>Certifications</h2>" +
+                    "<div class='detailed_content'>" +
+                    "<img src='SW.png' alt='CSWA' width =100%>" +
+                    "<br><h3 style='text-align: center'>Certified SOLIDWORKS Assocoate Certificate</h3>" +
+                    "</div>" +
+                    "<div class='detailed_content'>" +
+                    "<img src='FANUC.webp' alt='FANUC' width =100%>" +
+                    "<br><h3 style='text-align: center'>FANUC Cert HandlingTool Operastions and Programming</h3>" +
+                    "</div>" +
+                    "<p style='text-align: center'>More certifications at my linkedin profile!</p>",
+                "eca": "<h2>Extra Curricular Activities</h2><p><i><b>Taekwondo Instructor at McMaster Taekwondo Club</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sep 2022 - Present</i>" +
+                    "<br>McMaster University - Hamilton, Ontario" +
+                    "<ul><li>Taught over 100 university students </li>" +
+                    "<li>Planned and scheduled weekly classes to meet deadlines </li>" +
+                    "<li>Collaborated with taekwondo instructors from international taekwondo schools</li>" +
+                    "<li>Organized multiple internal competitions and events with demonstrated interpersonal, organization and critical thinking skills</li></ul></p>" +
+                    "<br><img src=\"tkd.jpg\" alt=\"tkd\" width='500px'>"
+            };
+
+            document.getElementById("content").innerHTML = content[section];
+
+
+        }
+
+    </script>
+
+    <footer style="color: white; text-align: center;font-family: Arial,sans-serif">
+        <p><i>Contact me via&nbsp&nbsp&nbsp<a href="ngt32@mcmaster.ca" style="color: white">ngt32@mcmaster.ca</a>&nbsp&nbsp&nbsp<a href="https://www.linkedin.com/in/tsz-lok-erin-ng-b14556221/" style="color: white">Linkedin Profile</a>&nbsp&nbsp&nbspPhone number:+1(519)-778-4052</i></p>
+        <i>&copy Copyright Erin Ng</i>
+        <p>&nbsp;</p>
+
+    </footer>
+
+</body>
+</html>
